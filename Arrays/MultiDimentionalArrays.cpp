@@ -38,12 +38,8 @@ int main(){
     cout << "\n";
     for(int j = 0;j<4;j++){
         int len = 3;
-        for(int i=0;i<3;i++){
-            if(i%2==0)
-            cout << a[i][j] << " ";
-            else{
-                cout << a[i][len--] << " ";
-            }
+        for(int i=0;i<3 && i%2==0;i++){
+            cout << a[i][j];
         }
         cout << endl;
     }
