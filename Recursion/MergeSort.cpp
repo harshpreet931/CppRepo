@@ -47,7 +47,7 @@ void mergeSort(int* a, int s , int e){
 
 
 int main(){
-    int a[] = {4,1,8,5,3};
+    int a[] = {10,9,8,7,6,5,4,3,2,1,0,-1,-2,-3,-4};
     int n = sizeof(a)/sizeof(int);
 
     cout<< "before : " << endl;
