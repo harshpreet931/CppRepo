@@ -1,16 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-char m[27] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+// Define a mapping from numbers to characters
+char mapping[27] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-vector<string> p(string n) {
-    if (n.empty()) return {""}; vector<string> f;
-    if (n[0] != '0') {vector<string> r = p(n.substr(1)); for (const string& s : r) f.push_back(m[n[0] - '0'] + s);}
-    if (n.size() >= 2 && (n[0] == '1' || (n[0] == '2' && n[1] <= '6'))) {vector<string> r = p(n.substr(2)); for (const string& s : r) f.push_back(m[stoi(n.substr(0, 2))] + s);}
-    return f;
+// Function to generate possible interpretations of a number string
+vector<string> generateInterpretations(string number) {
+    if (number.empty()) {
+        return {""}; // Base case: return an empty string in a vector
+    }
+
+    vector<string> interpretations;
+
+    if (number[0] != '0') {
+        vector<string> restInterpretations = generateInterpretations(number.substr(1));
+        for (const string& interpretation : restInterpretations) {
+            interpretations.push_back(mapping[number[0] - '0'] + interpretation);
+        }
+    }
+
+    if (number.size() >= 2 && (number[0] == '1' || (number[0] == '2' && number[1] <= '6'))) {
+        vector<string> restInterpretations = generateInterpretations(number.substr(2));
+        for (const string& interpretation : restInterpretations) {
+            interpretations.push_back(mapping[stoi(number.substr(0, 2))] + interpretation);
+        }
+    }
+
+    return interpretations;
 }
 
 int main() {
-    string n; cin >> n; vector<string> r = p(n); sort(r.begin(), r.end()); for (const string& s : r) cout << s << endl;
+    string number;
+    cin >> number;
+
+    vector<string> interpretations = generateInterpretations(number);
+    sort(interpretations.begin(), interpretations.end());
+
+    for (const string& interpretation : interpretations) {
+        cout << interpretation << endl;
+    }
+
     return 0;
 }
