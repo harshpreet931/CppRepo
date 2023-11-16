@@ -27,13 +27,9 @@ string removeAdjacentDuplicates(string str) {
 }
 
 int main() {
-    string input1 = "caaabbbaacdddd";
+    string input1 = "aaebbccdd";
     string result1 = removeAdjacentDuplicates(input1);
     cout << "Input: " << input1 << "\nOutput: " << (result1.empty() ? "Empty String" : result1) << endl;
-
-    string input2 = "acaaabbbacdddd";
-    string result2 = removeAdjacentDuplicates(input2);
-    cout << "Input: " << input2 << "\nOutput: " << (result2.empty() ? "Empty String" : result2) << endl;
 
     return 0;
 }
