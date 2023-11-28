@@ -26,7 +26,7 @@ public:
         name = NULL;
     }
 
-    Car(Car const &X){ // deepcopy
+    Car(Car X){ // deepcopy
         cout << "copy constructor called" << endl;
         name = new char[strlen(X.name) + 1];
         strcpy(name,X.name);
@@ -34,7 +34,7 @@ public:
         mileage = X.mileage;
         seats = X.seats;
     }
-    Car(Car &X){ // shallow copy
+    Car(Car X){ // shallow copy
         name = X.name;
         price = X.price;
         mileage = X.mileage;
