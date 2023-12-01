@@ -19,11 +19,6 @@ public:
     }
 
     Time operator+(Time inp){
-        // 20 : 40 : 40 and 20 : 40 : 40
-        //           __               __
-        // 40 + 40 = 80     rsec = 80 % 60, rsec = 20;
-        // 40 + 40 = 80     rmin = 80 + 1 = 81 % 60 = 21;
-        // 20 + 20 = 40     rhrs = 40 + 1 = 41 % 24 = 17;
         int rhr; int rmin; int rsec;
 
         rsec = sec + inp.sec;
