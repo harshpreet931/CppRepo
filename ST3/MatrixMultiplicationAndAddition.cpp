@@ -10,7 +10,6 @@ public:
     int **mat;
     int rows;
     int cols;
-
     Matrix(int m, int n){
         rows = m;
         cols = n;
