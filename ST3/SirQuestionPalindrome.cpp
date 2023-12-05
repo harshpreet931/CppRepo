@@ -5,7 +5,6 @@
 using namespace std;
 
 int main(){
-    bool res = true;
     string s; cin >> s; string str = s;
     reverse(s.begin(), s.end());
     if(s == str) cout << "true";

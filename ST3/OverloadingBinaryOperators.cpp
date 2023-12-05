@@ -18,25 +18,25 @@ public:
         cout << real << " i " << img << endl;
     }
 
-    Complex operator+(const Complex& X) const { // this is to add the complex objects
+    Complex operator+(Complex X) { // this is to add the complex objects
         int new_real = X.real + real;
         int new_img = X.img + img;
         return Complex(new_real, new_img);
     }
 
-    Complex operator-(const Complex& X) const { // this is to subtract the complex objects
+    Complex operator-(Complex X) { // this is to subtract the complex objects
         int new_real = real - X.real;
         int new_img = img - X.img;
         return Complex(new_real, new_img);
     }
 
-    Complex operator*(const Complex& X) const { // this is to multiply the complex objects
+    Complex operator*(Complex X) { // this is to multiply the complex objects
         int new_real = (real * X.real) - (img * X.img);
         int new_img = (real * X.img) + (img * X.real);
         return Complex(new_real, new_img);
     }
 
-    Complex operator/(const Complex& X) const { // this is to divide the complex objects
+    Complex operator/(Complex X) { // this is to divide the complex objects
         int denominator = (X.real * X.real) + (X.img * X.img);
         int new_real = ((real * X.real) + (img * X.img)) / denominator;
         int new_img = ((img * X.real) - (real * X.img)) / denominator;

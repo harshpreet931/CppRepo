@@ -43,18 +43,21 @@ public:
         return result;
     }
 
-    Matrix operator*(const Matrix& other) const {
+    Matrix operator*(Matrix other){
         if (cols != other.rows) {
             cerr << "Matrix multiplication not possible due to mismatched dimensions." << endl;
             return Matrix(0, 0);
         }
 
         Matrix result(rows, other.cols);
-        for (int i = 0; i < rows; ++i)
-            for (int j = 0; j < other.cols; ++j)
-                for (int k = 0; k < cols; ++k)
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < other.cols; ++j) {
+                result.mat[i][j] = 0;
+                for (int k = 0; k < cols; ++k) {
                     result.mat[i][j] += mat[i][k] * other.mat[k][j];
-
+                }
+            }
+        }
         return result;
     }
 

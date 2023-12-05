@@ -13,13 +13,11 @@ public:
     Counter(int i){
         count = i;
     }
-    Counter operator--(){
+    void operator--(){
         --count;
-        return this->count;
     }
-    Counter operator++(int){
+    void operator++(int){
         ++count;
-        return this->count;
     }
     void display(){
         cout << count << endl;

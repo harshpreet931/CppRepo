@@ -23,15 +23,16 @@ public:
     }
 };
 
-
+// static_cast<int>(class name);
 
 int main(){
     int min = 100;
+    // Time x(min);
     Time x = min;
     x.display();
 
     Time t(10,20);
-    int z = t;
+    int z = int(t);
     cout << z << endl;
     int y = x;
     cout << y;

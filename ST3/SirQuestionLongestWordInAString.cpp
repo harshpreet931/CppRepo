@@ -29,16 +29,28 @@ int main() {
 //    cout << "Longest word: " << res << endl;
 //    return 0;
 
+//        string s;
+//        getline(cin,s);
+//        stringstream ss(s);
+//        string word;
+//        string longestWord = "";
+//        while(ss >> word){
+//            cout << word << endl;
+//            if(word.size() > longestWord.size()){
+//                longestWord = word;
+//            }
+//        }
+//        cout << longestWord << endl;
+//
         string s;
         getline(cin,s);
         stringstream ss(s);
         string word;
-        string longestWord = "";
-        while(ss >> word){
-            cout << word << endl;
-            if(word.size() > longestWord.size()){
-                longestWord = word;
+        string lw;
+        while (ss >> word){
+            if(word.size() > lw.size()){
+                lw = word;
             }
         }
-        cout << longestWord << endl;
+        cout << lw;
 }
