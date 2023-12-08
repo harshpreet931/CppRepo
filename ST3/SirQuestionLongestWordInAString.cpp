@@ -42,15 +42,29 @@ int main() {
 //        }
 //        cout << longestWord << endl;
 //
-        string s;
-        getline(cin,s);
-        stringstream ss(s);
+//        string s;
+//        getline(cin,s);
+//        stringstream ss(s);
+//        string word;
+//        string lw;
+//        while (ss >> word){
+//            if(word.size() > lw.size()){
+//                lw = word;
+//            }
+//        }
+
+        // "Hello I am in library"
+
+        string s; getline(cin ,s);
+        stringstream stream(s);
+
         string word;
-        string lw;
-        while (ss >> word){
-            if(word.size() > lw.size()){
-                lw = word;
+        string longestWord;
+        while(stream >> word){
+            if(word.size() > longestWord.size()){
+                longestWord = word;
             }
         }
-        cout << lw;
+        cout << longestWord << endl;
+
 }

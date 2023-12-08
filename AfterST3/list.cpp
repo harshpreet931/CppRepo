@@ -19,7 +19,6 @@ int main() {
     for(auto i : li){
         cout << i << endl;
     }
-
     cout << "last : " << li.back() << endl;
     cout << "front : " << li.front() << endl;
     cout << li.empty() << endl;
